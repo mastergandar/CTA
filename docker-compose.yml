@@ -1,0 +1,17 @@
+version: '3.7'
+
+networks:
+  proxy: # docker network create --internal=false --attachable proxy
+    attachable: true
+    internal: false
+    name: proxy
+
+services:
+    api:
+        image: fastapi_server_image
+        restart: always
+        container_name: server-api
+        networks:
+            - proxy
+        ports:
+            - "8000:8000"
