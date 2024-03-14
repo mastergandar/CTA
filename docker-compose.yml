@@ -11,6 +11,8 @@ services:
         image: fastapi_server_image:lts
         restart: always
         container_name: server-api
+        command:
+          - python3 main.py
         networks:
             - proxy
         ports:
