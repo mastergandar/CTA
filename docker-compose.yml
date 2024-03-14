@@ -8,7 +8,7 @@ networks:
 
 services:
     api:
-        image: fastapi_server_image
+        image: fastapi_server_image:lts
         restart: always
         container_name: server-api
         networks:
